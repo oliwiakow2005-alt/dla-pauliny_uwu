@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dla Pauliny 💗</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(255, 255, 255, 0.8), transparent 30%),
+                linear-gradient(135deg, #ffb6d9, #caa7ff, #9fdcff);
+            color: #2b173d;
+            overflow-x: hidden;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+            position: relative;
+        }
+
+        .card {
+            width: min(920px, 100%);
+            background: rgba(255, 255, 255, 0.78);
+            border: 2px solid rgba(255, 255, 255, 0.85);
+            border-radius: 32px;
+            padding: 34px;
+            box-shadow: 0 24px 70px rgba(94, 30, 117, 0.28);
+            backdrop-filter: blur(14px);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 9px 16px;
+            border-radius: 999px;
+            background: #fff0f8;
+            color: #bd2d79;
+            font-weight: 800;
+            margin-bottom: 12px;
+            border: 1px solid #ffd0ec;
+        }
+
+        h1 {
+            font-size: clamp(34px, 7vw, 70px);
+            margin: 8px 0 10px;
+            line-height: 1;
+        }
+
+        h2 {
+            font-size: clamp(24px, 4vw, 40px);
+            margin: 0 0 14px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px auto;
+            max-width: 700px;
+        }
+
+        .small {
+            font-size: 14px;
+            opacity: 0.75;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 26px;
+        }
+
+        button {
+            border: 0;
+            border-radius: 18px;
+            padding: 15px 22px;
+            font-size: 17px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 26px rgba(74, 19, 94, 0.22);
+        }
+
+        .main-btn {
+            color: white;
+            background: linear-gradient(135deg, #ff3d9a, #8f41ff);
+        }
+
+        .soft-btn {
+            color: #7d2262;
+            background: #fff0f8;
+            border: 1px solid #ffc3e5;
+        }
+
+        .no-btn {
+            color: #512b62;
+            background: #f0e8ff;
+            position: relative;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .progress {
+            margin: 24px auto 0;
+            width: min(460px, 100%);
+            height: 12px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #ff3d9a, #8f41ff);
+            border-radius: 999px;
+            transition: width 0.35s ease;
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 14px;
+            margin: 24px 0 10px;
+        }
+
+        .memory {
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(255, 196, 230, 0.9);
+            border-radius: 22px;
+            padding: 18px;
+            text-align: left;
+            min-height: 120px;
+        }
+
+        .memory strong {
+            color: #b31674;
+        }
+
+        .love-note {
+            background: #fff8fc;
+            border: 2px dashed #ff8aca;
+            border-radius: 24px;
+            padding: 22px;
+            margin: 20px auto;
+            max-width: 720px;
+            text-align: left;
+        }
+
+        .choice-box {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+
+        .emoji-rain {
+            position: fixed;
+            top: -40px;
+            font-size: 26px;
+            animation: fall linear forwards;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .floating {
+            position: absolute;
+            opacity: 0.24;
+            font-size: 36px;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .f1 { top: 8%; left: 8%; }
+        .f2 { top: 13%; right: 10%; animation-delay: 1s; }
+        .f3 { bottom: 10%; left: 12%; animation-delay: 2s; }
+        .f4 { bottom: 13%; right: 9%; animation-delay: 1.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-18px); }
+        }
+
+        .final-title {
+            font-size: clamp(36px, 7vw, 82px);
+            background: linear-gradient(135deg, #ff2d95, #6d35ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .mini-alert {
+            margin-top: 16px;
+            padding: 14px;
+            border-radius: 18px;
+            background: #ffeaf6;
+            border: 1px solid #ffc0df;
+            font-weight: 700;
+        }
+
+        input {
+            width: min(520px, 100%);
+            border: 2px solid #ffd0ec;
+            border-radius: 16px;
+            padding: 14px 16px;
+            font-size: 16px;
+            outline: none;
+            margin-top: 10px;
+        }
+
+        input:focus {
+            border-color: #ff3d9a;
+            box-shadow: 0 0 0 5px rgba(255, 61, 154, 0.12);
+        }
+
+        @media (max-width: 560px) {
+            .card {
+                padding: 24px 18px;
+                border-radius: 24px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating f1">💗</div>
+    <div class="floating f2">✨</div>
+    <div class="floating f3">🌷</div>
+    <div class="floating f4">🫶</div>
+
+    <main class="page">
+        <section class="card">
+            <div class="badge">wiadomość specjalna dla Pauliny 💌</div>
+            <h1 id="title">Cześć, Paulina</h1>
+            <p id="text">
+                Zostałaś wybrana do bardzo poważnej misji: musisz klikać dalej,
+                bo Oliwia ma Ci coś ważnego do powiedzenia.
+            </p>
+
+            <div id="extra"></div>
+
+            <div class="buttons" id="buttons">
+                <button class="main-btn" onclick="nextStep()">Kliknij, jeśli jesteś gotowa 💅</button>
+            </div>
+
+            <div class="progress">
+                <div class="bar" id="bar"></div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let step = 0;
+        let noClicks = 0;
+
+        const title = document.getElementById("title");
+        const text = document.getElementById("text");
+        const extra = document.getElementById("extra");
+        const buttons = document.getElementById("buttons");
+        const bar = document.getElementById("bar");
+
+        const steps = [
+            {
+                title: "Dobra, zaczynamy 😎",
+                text: "Najpierw test bezpieczeństwa: czy wiesz, że jesteś bardzo ważną osobą dla Oliwii?",
+                button: "No dobra, wiem 😌"
+            },
+            {
+                title: "Uwaga, robi się słodko 🍓",
+                text: "Oliwia niby czasem udaje twardą, ale prawda jest taka, że za Tobą tęskni jak głupia.",
+                button: "Klikam dalej, bo chcę dramę 💗"
+            },
+            {
+                title: "Dowody w sprawie 📂",
+                text: "Zebrano materiał dowodowy potwierdzający, że Paulina jest babą absolutnie premium.",
+                extra: "memories",
+                button: "Przyjmuję dowody do wiadomości 🫡"
+            },
+            {
+                title: "Mała ankieta kontrolna 📝",
+                text: "Czy zgadzasz się ze stwierdzeniem, że Oliwia ma totalnego softa na Twoim punkcie?",
+                extra: "quiz"
+            },
+            {
+                title: "List do Pauliny 💌",
+                text: "Teraz część romantyczna, więc proszę nie uciekać.",
+                extra: "letter",
+                button: "Okej, czytam dalej 🥺"
+            },
+            {
+                title: "Finałowa decyzja ✨",
+                text: "No dobra. Skoro już tu jesteś, to zostało jedno bardzo ważne pytanie.",
+                extra: "final"
+            }
+        ];
+
+        function updateProgress() {
+            const percent = Math.min((step / steps.length) * 100, 100);
+            bar.style.width = percent + "%";
+        }
+
+        function nextStep() {
+            if (step >= steps.length) {
+                showFinalYes();
+                return;
+            }
+
+            const current = steps[step];
+            title.textContent = current.title;
+            text.textContent = current.text;
+            extra.innerHTML = "";
+            buttons.innerHTML = "";
+
+            if (current.extra === "memories") {
+                extra.innerHTML = `
+                    <div class="memory-grid">
+                        <div class="memory"><strong>Dowód nr 1:</strong><br>Paulina potrafi poprawić humor samym byciem obok.</div>
+                        <div class="memory"><strong>Dowód nr 2:</strong><br>Oliwia twierdzi, że to nie jest zauroczenie, tylko bardzo poważna sprawa.</div>
+                        <div class="memory"><strong>Dowód nr 3:</strong><br>Uśmiech Pauliny powinien być prawnie chroniony.</div>
+                        <div class="memory"><strong>Dowód nr 4:</strong><br>Brak Pauliny powoduje tęsknotę, marudzenie i dramatyczne emoji.</div>
+                    </div>
+                `;
+            }
+
+            if (current.extra === "quiz") {
+                extra.innerHTML = `
+                    <div class="choice-box">
+                        <button class="main-btn" onclick="goodAnswer()">Tak, oczywiście 💗</button>
+                        <button class="soft-btn" onclick="goodAnswer()">Tak, ale udaję zaskoczoną 😌</button>
+                        <button class="no-btn" id="noBtn" onclick="runAwayNo()">Nie wiem 🤨</button>
+                    </div>
+                    <div id="quizMsg" class="mini-alert hidden"></div>
+                `;
+                updateProgress();
+                step++;
+                return;
+            }
+
+            if (current.extra === "letter") {
+                extra.innerHTML = `
+                    <div class="love-note">
+                        <p><strong>Paulina,</strong></p>
+                        <p>
+                            chciałam Ci tylko powiedzieć, że jesteś dla mnie naprawdę ważna.
+                            Lubię Twoją obecność, Twój głos, Twoje wiadomości i to, że przy Tobie wszystko
+                            robi się jakieś bardziej moje, spokojniejsze i cieplejsze.
+                        </p>
+                        <p>
+                            Nie sądziłam, że będę za kimś tak tęsknić, a potem pojawiłaś się Ty i nagle
+                            mój mózg stwierdził: okej, ta osoba ma specjalne miejsce.
+                        </p>
+                        <p>
+                            Więc tak, to jest oficjalny komunikat: Oliwia bardzo lubi swoją Paulinę.
+                            Bardzo, bardzo. Tak trochę dramatycznie nawet. 💗
+                        </p>
+                    </div>
+                `;
+            }
+
+            if (current.extra === "final") {
+                extra.innerHTML = `
+                    <h2 class="final-title">Czy zostaniesz moją ulubioną babą?</h2>
+                    <p class="small">Uwaga: przycisk „nie” może być niestabilny emocjonalnie.</p>
+                `;
+                buttons.innerHTML = `
+                    <button class="main-btn" onclick="showFinalYes()">TAK, wiadomo 💗</button>
+                    <button class="no-btn" id="finalNo" onclick="runAwayFinalNo()">nie...</button>
+                `;
+                updateProgress();
+                step++;
+                return;
+            }
+
+            buttons.innerHTML = `<button class="main-btn" onclick="nextStep()">${current.button}</button>`;
+            popEmojis();
+            updateProgress();
+            step++;
+        }
+
+        function goodAnswer() {
+            const msg = document.getElementById("quizMsg");
+            msg.classList.remove("hidden");
+            msg.textContent = "Poprawna odpowiedź. Paulina otrzymuje 100 punktów i wirtualnego buziaka 💋";
+            buttons.innerHTML = `<button class="main-btn" onclick="nextStep()">Dalej, dawaj finał ✨</button>`;
+            popEmojis();
+        }
+
+        function runAwayNo() {
+            noClicks++;
+            const btn = document.getElementById("noBtn");
+            const msg = document.getElementById("quizMsg");
+            msg.classList.remove("hidden");
+
+            if (noClicks === 1) {
+                msg.textContent = "Podejrzana odpowiedź. Spróbuj jeszcze raz 😭";
+            } else if (noClicks === 2) {
+                msg.textContent = "Paulina, nie rób Oliwii tego psychicznie XD";
+            } else {
+                msg.textContent = "System uznał, że jednak się zgadzasz 💗";
+                goodAnswer();
+                return;
+            }
+
+            btn.style.transform = `translate(${Math.random() * 160 - 80}px, ${Math.random() * 90 - 45}px)`;
+        }
+
+        function runAwayFinalNo() {
+            const btn = document.getElementById("finalNo");
+            btn.textContent = "nie da się kliknąć 😌";
+            btn.style.position = "relative";
+            btn.style.left = `${Math.random() * 180 - 90}px`;
+            btn.style.top = `${Math.random() * 120 - 60}px`;
+        }
+
+        function showFinalYes() {
+            title.textContent = "Wiedziałam 💗";
+            text.textContent = "Decyzja zatwierdzona. Paulina zostaje oficjalnie ulubioną babą Oliwii.";
+            extra.innerHTML = `
+                <div class="love-note" style="text-align:center;">
+                    <h2>Certyfikat baby premium 🏆</h2>
+                    <p>Niniejszym potwierdza się, że Paulina jest kochana, tęskniona i absolutnie wyjątkowa.</p>
+                    <p><strong>Podpisano:</strong> Oliwia, osoba totalnie zakochana ✨</p>
+                </div>
+            `;
+            buttons.innerHTML = `<button class="main-btn" onclick="popEmojis(40)">Kliknij po serduszka 💗</button>`;
+            bar.style.width = "100%";
+            popEmojis(50);
+        }
+
+        function popEmojis(count = 24) {
+            const emojis = ["💗", "💖", "✨", "🌷", "🫶", "💅", "🥺", "💌", "😌"];
+
+            for (let i = 0; i < count; i++) {
+                const span = document.createElement("span");
+                span.className = "emoji-rain";
+                span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                span.style.left = Math.random() * 100 + "vw";
+                span.style.animationDuration = (Math.random() * 2 + 2.2) + "s";
+                span.style.opacity = Math.random() * 0.8 + 0.2;
+                document.body.appendChild(span);
+
+                setTimeout(() => span.remove(), 5000);
+            }
+        }
+    </script>
+</body>
+</html>
